@@ -8,14 +8,15 @@ import java.util.ArrayList;
 
 public class NumberOfPairThatHaveDifferenceK{
     
-    public void getPairs(int[] arr, int N, int K){
+    public ArrayList<Integer[]> getPairs(int[] arr, int N, int K){
         ArrayList<Integer[]> pairList = new ArrayList<>();
         for(int i = 0; i < N; i++){
             for(int j = i+1; j < N; j++){
-                if((arr[i] - arr[j]) == K){
+                if((Math.abs(arr[i] - arr[j])) == K){
                     pairList.add(new Integer[] {arr[i], arr[j]});
                 }
             }
         }
+        return pairList;
     }
 }
