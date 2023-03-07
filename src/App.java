@@ -13,5 +13,9 @@ public class App {
         for(Integer[] pair : num.getPair(arr, arr.length, 2)){
             System.out.println(Arrays.toString(pair));
         }
+
+        for(Integer[] pair : num.getPaires(arr, arr.length, 2)){
+            System.out.println(Arrays.toString(pair));
+        }
     }
 }

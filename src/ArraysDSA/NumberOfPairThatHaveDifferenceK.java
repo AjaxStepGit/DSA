@@ -3,6 +3,7 @@ package ArraysDSA;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Hashtable;
 
 // : Given an array of distinct integer values, count the number of pairs of integers that 
 // have difference k. For example, given the array {1 , 7, 5, 9, 2, 12, 3} and the difference 
@@ -54,6 +55,31 @@ public class NumberOfPairThatHaveDifferenceK{
         return pairList;
     }
 
+
+    //O (N) Approach
+
+    public ArrayList<Integer[]> getPaires(int[] arr, int N, int K){
+        System.out.println("Through O(N) Approach");
+        ArrayList<Integer[]> pairList = new ArrayList<>();
+        Hashtable<Integer, Integer> hTable = new Hashtable<>(); 
+        for(int e : arr){
+            hTable.put(e, e);
+        }
+
+        int sum = 0;
+
+        for(int i = 0; i < N; i++){
+            sum += (arr[i] + K);
+
+            if(hTable.containsKey(sum)){
+                pairList.add(new Integer[]{arr[i], sum});
+            }
+
+            sum = 0;
+        }
+
+        return pairList;
+    }
     
 
     
