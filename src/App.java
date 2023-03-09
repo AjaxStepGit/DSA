@@ -1,21 +1,15 @@
-import java.util.Arrays;
-
-import ArraysDSA.NumberOfPairThatHaveDifferenceK;
+import StringsDSA.CheckPermutation;
+import StringsDSA.CheckUniqueStringWithoutDS;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        NumberOfPairThatHaveDifferenceK num = new NumberOfPairThatHaveDifferenceK();
-        int[] arr = {1, 7, 5, 9, 2, 12, 3};
-        for(Integer[] pair : num.getPairs(arr, arr.length, 2)){
-            System.out.println(Arrays.toString(pair));
-        }
-
-        for(Integer[] pair : num.getPair(arr, arr.length, 2)){
-            System.out.println(Arrays.toString(pair));
-        }
-
-        for(Integer[] pair : num.getPaires(arr, arr.length, 2)){
-            System.out.println(Arrays.toString(pair));
+        String s1 = "abdc";
+        String s2 = "abcd";
+        CheckPermutation chk = new CheckPermutation();
+        if(chk.checkPermutation(s1, s2, s1.length())){
+            System.out.println("Strings are in permutation");
+        }else{
+            System.out.println("Strings are not in permutation");
         }
     }
 }
